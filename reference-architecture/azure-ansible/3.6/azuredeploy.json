@@ -7,19 +7,24 @@
       "minLength" : 1,
       "metadata" : {
         "description" : "User name for the Virtual Machine and OpenShift Webconsole."
-      }
+      },
+      "defaultValue" : "haytham"
     },
     "adminPassword" : {
       "type" : "securestring",
       "metadata" : {
         "description" : "User password for the OpenShift Webconsole"
       }
+    ,
+      "defaultValue" : "Elenaelena1986"
     },
     "sshKeyData" : {
       "type" : "securestring",
       "metadata" : {
         "description" : "SSH RSA public key file as a string."
       }
+    ,
+      "defaultValue" : "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCqjBnsFXUa5myshT+aiBMsPoGpXWyH6Z0gAWikuY+oKT2eZdZLrDCwn/Wbd0JMgRDLhizoX58NyF1htG6uxvtnOSC4W7eY3jbp9lN+T14zBlsbDzOiXYUQLW4NEdUYlxpnvKlKs7seYeQXrqpekO09YluJzphC1QQnDVsWfbDCeivs33Dx/9iMPED9VZnBSTZFDV12vyEjtnxdtQpcD7RXCWNtGYWSxHjwItxMTDrp36qk7WO1T27T1QnnFdUm/5P18YnCIPraXYLNQFE4eVPHqwHDjjaH4IRYY7xaUkLsVLob2OMsucbFiqFO92n9FJjqZuIZFPIuwpmMQLIseiz36wBBcb1E6Ya+v/t9Y96xxjgKptCe9tw9hLgVXh5hu9tAAjY/Kiupmo0xeR98/5m7la7qd9stqRw7tvkF0gu2ar/Hfv29V3oWAIFyChOMA1SVnKgKGhi6hfCuEORSdDsxQqYsrzbmCYZ5SW/UTyzFDqeAB8Auh+bqOCpSKaZOsOXaRgw0TOd54bLeQGJrnMJT8mr2nFhGzOgO76/VuMCEGdu3XsLLLADs3pfRYn0fCyhRQYkg5GpQjpJUVJ+P+arO+3ns9+l1N33DINHjHtBeRRlHX8JXBAV/UllXUuVrAkBfJPXCOiDu8UWJsLRRmwPOo3xGiWTYcpZApDOvhdqPEw=="
     },
     "WildcardZone" : {
       "type" : "string",
@@ -27,6 +32,9 @@
       "metadata" : {
         "description" : "Globally unique wildcard DNS domain for app access."
       }
+
+    ,
+      "defaultValue" : "hibrahim-net"
     },
     "numberOfNodes" : {
       "type" : "int",
@@ -121,6 +129,7 @@
     "infranodeVMSize" : {
       "type" : "string",
       "defaultValue" : "Standard_DS4_v2",
+
       "allowedValues" : [
         "Standard_A2",
         "Standard_A3",
@@ -278,6 +287,9 @@
       "metadata" : {
         "description" : "Red Hat Subscription User Name or Email Address or Organization ID"
       }
+
+    ,
+      "defaultValue" : "figaro_cmd"
     },
     "RHNPassword" : {
       "type" : "securestring",
@@ -291,24 +303,30 @@
       "metadata" : {
         "description" : "Pool ID of the Red Hat subscritpion to use"
       }
+
+    ,
+      "defaultValue" : "8a85f9814ff0134a014ff43b44515532"
     },
     "sshPrivateData" : {
       "type" : "securestring",
       "metadata" : {
         "description" : "SSH RSA private key file as a base64 string."
-      }
+      },
+      "defaultValue" : "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBcW93WjdCVjFHdVpzcklVL21vZ1RMRDZCcVYxc2grbWRJQUZvcExtUHFDazlubVhXClM2d3dzSi8xbTNkQ1RJRVF5NFlzNkYrZkRjaGRZYlJ1cnNiN1p6a2d1RnUzbU40MjZmWlRmazllTXdaYkd3OHoKb2wyRkVDMXVEUkhWR0pjYVo3eXBTck83SG1Ia0Y2NnFYcER0UFdKYmljNllRdFVFSncxYkZuMnd3bm9yN045dwo4Zi9ZakR4QS9WV1p3VWsyUlExZGRyOGhJN1o4WGJVS1hBKzBWd2xqYlJtRmtzUjQ4Q0xjVEV3NjZkK3FwTzFqCnRVOXUwOVVKNXhYVkp2K1Q5ZkdKd2lENjJsMkN6VUJST0hsVHg2c0J3NDQyaCtDRVdHTzhXbEpDN0ZTNkc5amoKTExuR3hZcWhUdmRwL1JTWTZtYmlHUlR5THNLWmpFQ3lMSG9zOStzQVFYRzlST21HdnIvN2ZXUGVzY1k0Q3FiUQpudmJjUFlTNEZWNGVZYnZiUUFJMlB5b3JxWnFOTVhrZmZQK1p1NVd1Nm5mYkxha2NPN2I1QmRJTHRtcS94Mzc5CnZWZDZGZ0NCY2dvVGpBTlVsWnlvQ2hvWXVvWHdyaERrVW5RN01VS21MSzgyNWdtR2VVbHYxRThzeFE2bmdBZkEKTG9mbTZqZ3FVaW1tVHJEbDJrWU1ORXpuZWVHeTNrQmlhNXpDVS9KcTlweFlSc3pvRHUrdjFiakFoQm5idDE3Qwp5eXdBN042WDBXSjlId3NvVVVHSklPUnFVSTZTVkZTZmovbXF6dnQ1N1BmcGRUZDl3eURSNHg3UVhrVVpSMS9DClZ3UUZmMUpaVjFMbGF3SkFYeVQxd2pvZzd2RkZpYkMwVVpzRHpxTjhSb2xrMkhLV1FLUXpyNFhhanhNQ0F3RUEKQVFLQ0FnRUFtdWIzWUhPNDBuNzVzOVN2Q1dlUXFuMzNmT0lyQW1OUVlGS0hQaDZBZVlkRHZVdlgwUkdMZzlFMQoza2Y2d3N2emVqZmJNQkF4d2UzN3l4TjcrR2tvelArWlZYbVFqMXM5MjFEdFV1czVydlNWNlVUc2JBdXZJUnR5Ck9wSzR6MFhuS05PMW0vRVZBcXA4NW5teHFvVE54aFJBK2pEWUlOT2ptdWpKaytzRGtoQXZOMDFYSTZaeWhDVHkKRG1jaWFPbGJUbXF1T24yczF1Z1htM0VsQUtzTzdJTE5lTGxXbGhDM203eStCTnEwSTlvUC93N1Nva3FNYWdDMApwdHd3cHVRNStvZXd6TTd4cVVhSDJHOFRsa3kwcU1VTXJCYk9OcW5ZNndOamYxSDZFUGQvdG0xUElUOTNaOUxiCllvTGNGSThSdU0xTGpPWjJkYnd3aEsvNlpPVnZVeDZqcFZSd2tkZ0ZUVHg1TjdjeXZvRUdrLzNYQStndUt4a3kKaktWZlhpTkNNTktNODZSYWYvcVRFMUJEdkc5NDh4Q0RHWkpEK29DZnp4b2Q1cXNkQ3hnb3JKbFhITnp4Y0IwUgpmZ3hjbGtkdUxZd2lpOW8xYWN6cnZFS0ViY2J3QklkL2M2SUx4Wmg0M0VSc2ZQc0pSVVkrdFJ0R1RQUjlMMkRZCmtCRmZvVzVzeDI5V0tVT1VJSFk2MXZtMEsySVUwOHFHMkFmMElzOHNtWGtMaUZxeEt1aVhrV0REN3ZBUlk1STUKeHVWZjNpM0JXdUhmVmdnYU5VSXJuWTJYUWRseC91UURQN1ByR2FSb0dsbUNkSnh0UnZ3RUFJNTY2Y0MyRVgvLwp4d0YvMjU4bDVGKzlrVTdQWThTN21PQnZjS3pSelZoNE1ROFU1cWVNWHF1TnQwdlc5NmtDZ2dFQkFOaDJ2Nk5SClFlWFFZVXBuTjQ5RXRHOU9HUW0wakd0THJub3JybW94TVpVcml1cGZjRDFPaGFtbk5iM3JycHB4VDJGd1lUcW4KWUo4WUVyY2R1QkxUeUs5TlhRSllzbkc3U0F0VmtFSE8wTE5oRXRmNjBHdDB1SkozbFRLYXVQZkpIcHB1eEdhRgpneFVXZlhzYmRKU3dPV2Z2QzI3d3JtWlh6NEl6Q3ZWN25QNEt2bHVJcEdoNWd1QUFCTnRSMmxrWkNrVzZvbkVZCkg0SXBUTzZ0MG1KWnR3YUlYQ21PRWRSUC9lV3dFN096REhxWVVQUW9sSmRBRDJtSFplUFNBUU0rNDhPeFYxMVEKWkc3WDRJSi9vemtDZTRRc1RlclpqRklMUzFVYmdSRWp1RzJIUE5ybldTMkxPc25tbTRBcFkwNEFwQklMWlhZeApMbVZ6V2tEeitiQnR0TjBDZ2dFQkFNbXlhMzFUL2JhbXk1NW1UVGVoMEZyaktWaEpDWmxPSGFhOEZKN01VZUVCCk9RZ1MycUtBL2VzSEZRU2JVMkdFa1VVYlR2OUtqR1I2L1hSODJqTVpJRVBGbjNlaXR3cTR1UnNNcTlKbDhwa1EKME9Pdk5UL01GZi9qQzJGVHlXUGpyK2Y3c3pJcC9qV2xydmJCNFp1V3p3TFlvS2wvOTJkWW1RQktod1c0YVg5Kwo4T2lQRDBKU01OQzNiSjFQRDR5a3U5L0x0WU1lSmhVSENHaDh3UEpJY3NkYkVtZG5EVjZ3K1VkSXhOSkJDVmRlCmkyWTJlN0hKcjBleHNFQmRaZkt0SWlhZ25FZzlkbFdZcktyclBpQlVMckNuK0tpeVR6QmVGUHNVMXBVZ1poYWoKRGw2MVpOcTE4SHZTaHRXd1VoK2pSY1gxZlV3WnRla204MFhnckh0RzNLOENnZ0VCQUprMHl3UmJzY2xuaUVTeAo4MWY2cDc2VHh4TGdiL1pORll1d3VQeStIcnJXbTdhd24rODBVVlEzWGNrek0xeHFVR1hGdFh0ZkZmcmtmZktQCkhVWnVFUDlLUVVjMDRlK3ZQeG1Pa05DVEFaSEVaaUxwaVhSVW80SS9FeUZDOHlHbGZueU5ZNEt3Z290OVpJaXEKY1FRQUNsRnVsbWdKLzFXK1ZzZHZPeFZ1VFRwYy9rZ28yVHg4ckUzQWxhOXBLcUtmSDI4azNtNHZSYlhKWjRNVApFZkc4VDlkVzBld3plcGtMbU1kbHJUd2x3UEpRTmhQcFdPb0lWQ0E3emJqR1hTTWY4dk1CNUxUTi9wZVpRWFQ3Cnc5bkkwUVZHbWt0YmVINWxNZ2RsdFI4ZGFoNVRkcFgwNG1CaXg5UTQzTnlEN3A0NXcrWmxuSVZmMzllOElpZ1EKeGl2Q0toMENnZ0VBS0pEZTk1VDErVTl3c29vR3k4S2F3anpmNnVhOXJIeStqL05SL21JL3NZNXFad3BMdU5WUwp2SHR2S2I4SHRSeFJqMkdmc003UWo4RUF5dlgxZU1ONzdzV0hmaXRXdnl4SjVudlU3dnNjSU5iMS9HVVh3NTRMCmFxekNkQy9DMkhsSnZ0R3J4OUlVVTd2Z0JiY1c1aEVkejRlOFFIc0JTbUxTV3ZHaVdHOHZvTG5xUUF2TjJOdm8KLzRGMHNlcmR5TDYxSHB5OUJBTURTOFZmVm95SXpmSHVTOVF3VG1XMmxhM29aUUxvdXhUamlSUDEyM2ZueHVrMgpmS2ZyTi9iUTgwOEpDRlhUT09CTHRZbUFhTnZwWWQwc2l0RXR2TmduL3lWYytPYkhCYlUvY3h3V1hzd0MzYzRyCjhPdDF2UEs2Z2F4Mzh3bWR5cmw5RWNpSXN5d3Q1SmxxOXdLQ0FRQVRKZjNKaER1NVE2ZDhUM3JmT003aGFIaysKbHJaNVpVUFl5dUI4OWlPTWFZTmFSMlFvMmtBWWcwV2YzbDJFU1hsSTVSMGN1UW94SHY2L2J1ZVp2YTl2aGZjTgplbHMvRjluTUFCTTlMbG81VGg5T0FrbW9TRzhzbU0yeGZjcXF1RnhTOEVyY2l4bk0rK1ZiSHUwLy8rNnJJYmpDCllTcG9hbW5LTWw4V0JRQkFEb0dTZVYvdTN0MGZlS1dhbjlOSzZTTDYwTG5rZFpPZzMzMkQvNVErMHJrc2ZscW0KdzdUeVJ6MS9WNkNvSy9HNWF2dWttaEJRM3N5Q0kzdVRFUGpBSkk4SUFldFZyMmpJU0lXZUVwSlhKc3ZQMnRTMAo1VEFhQWZVK29QUTc2NEw0bXkvUjVLanBQR1I5c3Viemt0YUg1Sm9OR3lHNkZ6STMwd3M2dm0vdCtEQUQKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K"
     },
     "aadClientId" : {
       "type" : "string",
       "metadata" : {
         "description" : "Azure AD Client Id"
-      }
+      } ,
+      "defaultValue" : "xxxx"
     },
     "aadClientSecret" : {
       "type" : "securestring",
       "metadata" : {
         "description" : "Azure AD Client Secret"
-      }
+      } ,
+      "defaultValue" : "xxxx"
     },
     "OpenShiftSDN" : {
       "type" : "string",
@@ -344,7 +362,7 @@
     }
   },
   "variables" : {
-    "gituser" : "openshift",
+    "gituser" : "haythamhosney",
     "branch" : "master",
     "version" : "3.6",
     "baseTemplateUrl" : "[concat('https://raw.githubusercontent.com/',variables('gituser'),'/openshift-ansible-contrib/',variables('branch'),'/reference-architecture/azure-ansible/',variables('version'),'/')]",
