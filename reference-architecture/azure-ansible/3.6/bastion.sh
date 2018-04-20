@@ -163,12 +163,14 @@ rm -f /etc/yum.repos.d/rh-cloud.repo
 yum-config-manager --disable epel
 yum-config-manager --disable epel-testing
 sleep 30
-if [[ $RHSMMODE == "usernamepassword" ]]
-then
+echo $RHSMMODE > rshm.txt
+
+#if [[ $RHSMMODE == "usernamepassword" ]]
+#then
    subscription-manager register --username="${RHNUSERNAME}" --password="${RHNPASSWORD}"
-else
-   subscription-manager register --org="${RHNUSERNAME}" --activationkey="${RHNPASSWORD}"
-fi
+#else
+#   subscription-manager register --org="${RHNUSERNAME}" --activationkey="${RHNPASSWORD}"
+#fi
 subscription-manager attach --pool=$RHNPOOLID
 subscription-manager repos --disable="*"
 subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable="rhel-7-fast-datapath-rpms"
