@@ -389,8 +389,8 @@ cat <<EOF >> /home/${AUSERNAME}/subscribe.yml
     delay: 30
     ignore_errors: yes
 EOF
-if [[ $RHSMMODE == "usernamepassword" ]]
-then
+#if [[ $RHSMMODE == "usernamepassword" ]]
+#then
     echo "  - name: attach sub" >> /home/${AUSERNAME}/subscribe.yml
     echo "    shell: subscription-manager attach --pool=$RHNPOOLID" >> /home/${AUSERNAME}/subscribe.yml
     echo "    register: task_result" >> /home/${AUSERNAME}/subscribe.yml
@@ -398,7 +398,7 @@ then
     echo "    retries: 10" >> /home/${AUSERNAME}/subscribe.yml
     echo "    delay: 30" >> /home/${AUSERNAME}/subscribe.yml
     echo "    ignore_errors: yes" >> /home/${AUSERNAME}/subscribe.yml
-fi
+#fi
 cat <<EOF >> /home/${AUSERNAME}/subscribe.yml
   - name: disable all repos
     shell: subscription-manager repos --disable="*"
