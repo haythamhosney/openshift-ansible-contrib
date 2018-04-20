@@ -171,6 +171,7 @@ echo $RHSMMODE > rshm.txt
 #else
 #   subscription-manager register --org="${RHNUSERNAME}" --activationkey="${RHNPASSWORD}"
 #fi
+
 subscription-manager attach --pool=$RHNPOOLID
 subscription-manager repos --disable="*"
 subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable="rhel-7-fast-datapath-rpms"
@@ -375,12 +376,12 @@ cat <<EOF > /home/${AUSERNAME}/subscribe.yml
     ignore_errors: yes
   - name: register hosts
 EOF
-if [[ $RHSMMODE == "usernamepassword" ]]
-then
+#if [[ $RHSMMODE == "usernamepassword" ]]
+#then
     echo "    shell: subscription-manager register --username=\"${RHNUSERNAME}\" --password=\"${RHNPASSWORD}\"" >> /home/${AUSERNAME}/subscribe.yml
-else
-    echo "    shell: subscription-manager register --org=\"${RHNUSERNAME}\" --activationkey=\"${RHNPASSWORD}\"" >> /home/${AUSERNAME}/subscribe.yml
-fi
+#else
+#    echo "    shell: subscription-manager register --org=\"${RHNUSERNAME}\" --activationkey=\"${RHNPASSWORD}\"" >> /home/${AUSERNAME}/subscribe.yml
+#fi
 cat <<EOF >> /home/${AUSERNAME}/subscribe.yml
     register: task_result
     until: task_result.rc == 0
