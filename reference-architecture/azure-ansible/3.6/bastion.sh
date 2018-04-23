@@ -2,6 +2,8 @@
 
 export MYARGS=$@
 IFS=' ' read -r -a array <<< "$MYARGS"
+cat $MYARGS > myarg.txt
+
 export RESOURCEGROUP=$1
 export WILDCARDZONE=$2
 export AUSERNAME=$3
@@ -55,6 +57,8 @@ echo $SUBSCRIPTIONID
 echo $TENANTID
 echo $AADCLIENTID
 echo $AADCLIENTSECRET
+
+env >> env.txt
 
 domain=$(grep search /etc/resolv.conf | awk '{print $2}')
 
