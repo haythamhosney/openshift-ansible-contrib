@@ -15,20 +15,20 @@ export RHNPOOLID=${10}
 export SSHPRIVATEDATA=${11}
 export SSHPUBLICDATA=${12}
 export SSHPUBLICDATA2=${13}
-export SSHPUBLICDATA3=${14}
-export REGISTRYSTORAGENAME=${array[14]}
-export REGISTRYKEY=${array[15]}
-export LOCATION=${array[16]}
-export SUBSCRIPTIONID=${array[17]}
-export TENANTID=${array[18]}
-export AADCLIENTID=${array[19]}
-export AADCLIENTSECRET=${array[20]}
-export RHSMMODE=${array[21]}
-export OPENSHIFTSDN=${array[22]}
-export METRICS=${array[23]}
-export LOGGING=${array[24]}
-export OPSLOGGING=${array[25]}
-export GITURL=${array[26]}
+#export SSHPUBLICDATA3=${14}
+export REGISTRYSTORAGENAME=${14}
+export REGISTRYKEY=${15}
+export LOCATION=${16}
+export SUBSCRIPTIONID=${17}
+export TENANTID=${18}
+export AADCLIENTID=${19}
+export AADCLIENTSECRET=${20}
+export RHSMMODE=${21}
+export OPENSHIFTSDN=${22}
+export METRICS=${23}
+export LOGGING=${24}
+export OPSLOGGING=${25}
+export GITURL=${26}
 export FULLDOMAIN=${THEHOSTNAME#*.*}
 export WILDCARDFQDN=${WILDCARDZONE}.${FULLDOMAIN}
 export WILDCARDIP=`dig +short ${WILDCARDFQDN}`
@@ -55,6 +55,10 @@ echo $SUBSCRIPTIONID
 echo $TENANTID
 echo $AADCLIENTID
 echo $AADCLIENTSECRET
+
+
+env
+exit 0
 
 domain=$(grep search /etc/resolv.conf | awk '{print $2}')
 
