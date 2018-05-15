@@ -57,8 +57,6 @@ echo $AADCLIENTID
 echo $AADCLIENTSECRET
 
 
-env
-exit 0
 
 domain=$(grep search /etc/resolv.conf | awk '{print $2}')
 
